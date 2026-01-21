@@ -38,7 +38,6 @@ Generate 5 questions.
     const result = await model.generateContent(prompt);
     const rawText = result.response.text();
 
-    // ✅ Extract JSON safely
     const jsonStart = rawText.indexOf("{");
     const jsonEnd = rawText.lastIndexOf("}") + 1;
     const cleanText = rawText.substring(jsonStart, jsonEnd);

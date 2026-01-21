@@ -32,7 +32,7 @@ Rules:
 
 Topic: ${subject}
 Difficulty: ${level}
-Generate 5 questions.
+Generate 10 questions.
 `;
 
     const result = await model.generateContent(prompt);

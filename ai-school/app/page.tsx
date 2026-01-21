@@ -26,12 +26,13 @@ export default function Home() {
         }}
       >
         <h1 style={{ fontSize: "3rem", marginBottom: "20px", color: "#3b87d3" }}>
-          Welcome to Quiz.ai Where You Can Test Your Skills!
+          Welcome to Quiz.ai Where You Can Test Your knowledge!
         </h1>
 
         <p style={{ fontSize: "1.25rem", color: "#256bb1", marginBottom: "30px" }}>
           Unlock your potential and upskill yourself with our AI-powered quizzes. 
           Test your knowledge, learn new skills, and become the best version of yourself.
+          You can test your General knowledge to subject knowledge
         </p>
 
         <button

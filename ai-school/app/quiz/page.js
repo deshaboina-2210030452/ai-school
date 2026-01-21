@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import Navbar from "/components/Navbar";
 export default function QuizPage() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -51,6 +51,8 @@ export default function QuizPage() {
   }
 
   return (
+    <>
+      <Navbar />
     <div className="p-6 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-4 text-center">AI-Powered Quiz</h1>
 
@@ -67,9 +69,9 @@ export default function QuizPage() {
         onChange={(e) => setLevel(e.target.value)}
       >
         <option value="">Select Level</option>
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
+        <option style={{color:'black',cursor:"pointer"}}>Beginner</option>
+        <option style={{color:'black',cursor:"pointer"}}>Intermediate</option>
+        <option style={{color:'black',cursor:"pointer"}}>Advanced</option>
       </select>
 
       <button
@@ -123,5 +125,6 @@ export default function QuizPage() {
         </h2>
       )}
     </div>
+  </>
   );
 }

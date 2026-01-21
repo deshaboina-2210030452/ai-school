@@ -13,22 +13,26 @@ export async function POST(req) {
     const prompt = `
 You are an API that returns ONLY valid JSON.
 
+STRICT RULES (VERY IMPORTANT):
+- options must be an array of 4 strings
+- correctAnswer MUST be ONLY ONE LETTER: "A", "B", "C", or "D"
+- correctAnswer MUST correspond to the correct option index
+- DO NOT return the option text as correctAnswer
+
 Return EXACTLY this structure:
 {
   "questions": [
     {
       "question": "string",
-      "options": ["A", "B", "C", "D"],
+      "options": ["option1", "option2", "option3", "option4"],
       "correctAnswer": "A"
     }
   ]
 }
 
-Rules:
-- No markdown
-- No explanation
-- No headings
-- No extra text
+No markdown.
+No explanation.
+No extra text.
 
 Topic: ${subject}
 Difficulty: ${level}
@@ -43,12 +47,12 @@ Generate 10 questions.
     const cleanText = rawText.substring(jsonStart, jsonEnd);
 
     const quiz = JSON.parse(cleanText);
-
     return Response.json(quiz);
+
   } catch (error) {
     console.error(error);
     return Response.json(
-      { error: "Gemini JSON parsing failed" },
+      { error: "Quiz generation failed" },
       { status: 500 }
     );
   }
